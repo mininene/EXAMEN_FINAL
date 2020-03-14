@@ -15,7 +15,7 @@ namespace EXAMEN_FINAL.Services.Repository
     public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         public JugadorContext _context = null;
-        public DbSet<T> table = null;
+        public DbSet<T> table = null ;
 
       
 
