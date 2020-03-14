@@ -1,0 +1,45 @@
+﻿@model IEnumerable<EXAMEN_FINAL.Models.ViewModel.VMEquipo>
+
+@{
+    ViewBag.Title = "Equipos";
+}
+
+<h2>Equipos</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NombreEquipo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroJugadores)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Media)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NombreEquipo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroJugadores)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Media)
+        </td>
+        <td>
+            @Html.ActionLink("Ver Jugadores", "JugadoresEquipo", new { id=item.NombreEquipo }) |
+            @Html.ActionLink("Details", "Details", new { id=item.NombreEquipo }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.NombreEquipo })
+        </td>
+    </tr>
+}
+
+</table>
